@@ -1,0 +1,283 @@
+/* Dropdown Styles -- */
+
+.main-navigation .sub-menu {
+    width: 200px;
+    background: #ffffff;
+    z-index: 9;
+    text-align: right;
+    animation: fadeInUp .2s ease-in;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .25);
+}
+
+.main-navigation .menu-item {
+    position: relative;
+}
+
+.main-navigation .sub-menu .sub-menu {
+    animation: fadeInSide .2s ease-in;
+}
+
+.sub-menu .menu-item-has-children {
+    position: relative;
+}
+
+.navbar-expand-lg .navbar-nav .menu-item-has-children .nav-link {
+    display: inline-block;
+}
+
+.navbar-expand-lg .navbar-nav .menu-item-has-children .sub-menu .nav-link {
+    color: #333333;
+    padding: 5px 28px;
+    display: block;
+}
+
+.menu-item-has-children:after {
+    content: '';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 9px;
+    content: "\f078";
+    color: #ffffff;
+    margin: 3px 0 0 8px;
+    vertical-align: text-top;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sub-menu .menu-item-has-children::after {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    transform: rotate(90deg);
+    color: #333333;
+    margin: 0;
+}
+
+
+/* -- Menu Dropdown Dropdown Toggle Styles -- */
+
+@media (max-width: 3000px) and (min-width: 992px) {
+    .main-navigation .sub-menu .sub-menu:before {
+        display: none;
+    }
+    .main-navigation .sub-menu ul {
+        margin: 0;
+    }
+    .main-navigation .navbar-nav .sub-menu .menu-item {
+        margin: 0;
+        display: block;
+    }
+    .main-navigation .sub-menu a {
+        font-size: 14px;
+        color: #ffffff;
+        border: none;
+        padding: 10px 15px;
+        border-top: 1px solid rgba(255, 255, 255, .2);
+    }
+    .main-navigation ul ul {
+        display: none;
+        position: absolute;
+    }
+    .main-navigation ul ul ul {
+        display: none;
+        top: 0;
+    }
+    .main-navigation ul ul li:hover>ul {
+        right: 100%;
+    }
+    .main-navigation ul li:hover>ul {
+        display: block;
+        right: 0;
+    }
+}
+
+@media (max-width: 1199px) {
+    .main-navigation .dropdown-toggle {
+        display: inline-block;
+    }
+    .main-navigation ul li:hover>ul {
+        display: none;
+    }
+    .menu-item-has-children::after {
+        display: none;
+    }
+    .caret:after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 9px;
+        content: "\f078";
+        color: #ffffff;
+        display: inline-block;
+        padding: 5px;
+        line-height: 1;
+    }
+    .main-navigation .navbar-nav .menu-item.menu-open>ul {
+        display: block;
+        position: absolute;
+        right: 0;
+    }
+    .sub-menu .caret {
+        position: absolute;
+        top: 3px;
+        left: 15px;
+    }
+    .sub-menu .caret:after {
+        transform: rotate(90deg);
+        color: #333333;
+    }
+    .main-navigation .navbar-nav .menu-item.menu-open>ul ul {
+        right: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+    .main-navigation {
+        padding: 0 15px;
+    }
+    #menu {
+        height: 19px;
+        position: relative;
+        outline: none;
+    }
+    #menu:hover {
+        opacity: 0.7;
+    }
+    #menu span {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 2px;
+        width: 22px;
+        background: #ffd02b;
+    }
+    #menu span:nth-child(2) {
+        top: 6px;
+    }
+    #menu span:nth-child(3) {
+        top: 12px;
+    }
+    #menu.navbar-toggler span:nth-child(1),
+    #menu.navbar-toggler span:nth-child(3) {
+        transition: transform .3s ease-in-out;
+    }
+    #menu.navbar-toggler:not(.collapsed) span:nth-child(1) {
+        top: 6px;
+        transform: rotate(135deg);
+    }
+    #menu.navbar-toggler:not(.collapsed) span:nth-child(2) {
+        height: 12px;
+        visibility: hidden;
+    }
+    #menu.navbar-toggler:not(.collapsed) span:nth-child(3) {
+        top: 6px;
+        transform: rotate(-135deg);
+    }
+    .appear-left #navbarmenus {
+        overflow-y: auto;
+        position: fixed;
+        background-color: #000000;
+        top: 0;
+        left: -250px;
+        height: 100vh;
+        bottom: 0;
+        width: 250px;
+        z-index: 999;
+        -o-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+    .appear-left #navbarmenus.show {
+        left: 0;
+    }
+    #navbarmenus .navbar-nav .menu-item {
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        display: block;
+        padding: 0;
+    }
+    #navbarmenus .navbar-nav .menu-item .nav-link {
+        font-size: 13px;
+        color: #ffffff !important;
+        padding: 20px;
+        line-height: 1.2;
+        border-bottom: 1px solid transparent;
+        display: block;
+    }
+    #navbarmenus #social-menu .menu-item {
+        text-align: left;
+    }
+    #social-menu li a[href]:before {
+        margin-right: 10px;
+    }
+    #navbarmenus .sub-menu,
+    #navbarmenus .sub-menu .sub-menu {
+        text-align: left;
+        background: transparent;
+        padding-left: 20px;
+        width: auto;
+        box-shadow: none;
+    }
+    #navbarmenus .navbar-nav .menu-item .sub-menu .menu-item {
+        border: none;
+    }
+    .main-navigation .sub-menu {
+        padding: 0 0 0 8px;
+        display: none;
+    }
+    .menu-item-has-children {
+        position: relative;
+    }
+    .menu-item-has-children .caret {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        left: unset;
+    }
+    .sub-menu .caret:after {
+        color: #ffffff;
+        transform: rotate(0deg);
+    }
+    .main-navigation .navbar-nav .menu-item.menu-open>ul {
+        position: relative;
+        padding: 0 0 0 8px;
+    }
+    .main-navigation .navbar-nav .menu-item.menu-open>ul ul {
+        right: unset;
+        left: unset;
+    }
+}
+
+
+/* -- All Dropdown Animations -- */
+
+@keyframes fadeInSide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translatex(20px);
+        -ms-transform: translatex(20px);
+        transform: translatex(20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translatex(0);
+        -ms-transform: translatex(0);
+        transform: translatex(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}

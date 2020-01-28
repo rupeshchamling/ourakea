@@ -1,0 +1,466 @@
+@media (max-width: 1200px) {
+    .table-compare .price {
+        font-size: 20px;
+    }
+
+    .post-widget-img {
+        width: 30%;
+    }
+
+    .post-widget h4 {
+        width: 70%;
+    }
+
+    .column-purchase {
+        margin: -36px 38px;
+    }
+
+    .section-purchase .column:first-child {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    .btn-buynow {
+        display: none;
+    }
+
+    .btn-mob {
+        display: block;
+    }
+
+    .section-facilities {
+        padding: 100px 0;
+    }
+
+    .section-facilities .section-heading {
+        font-size: 38px;
+    }
+
+    .section-facilities .section-heading span {
+        font-size: 54px;
+    }
+
+    .section-features .column {
+        flex: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        transform: none;
+    }
+
+    .section-features .d-flex {
+        width: 50%;
+    }
+
+    .section-demo-import .container {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .section-demo-import .col-right {
+        order: unset;
+    }
+
+    .section-demo-import .btn {
+        margin: 0 0 36px;
+    }
+
+    .section-editor-info,
+    .section-purchase {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top;
+        box-shadow: 0px 20px 15px rgba(0, 0, 0, .09);
+    }
+
+    .slide-content {
+        left: 0;
+        opacity: .96;
+    }
+
+    .table-compare tr th:nth-child(2),
+    .table-compare tr td:nth-child(2) {
+        padding: 15px 30px;
+    }
+
+    .table-compare .price {
+        white-space: nowrap;
+    }
+
+    .column-purchase {
+        margin: -36px 68px;
+    }
+
+    .section-purchase .container {
+        max-width: 600px;
+    }
+
+    .section-purchase {
+        padding-top: 0;
+    }
+
+    .section-purchase .column {
+        width: 100% !important;
+        margin-bottom: 98px;
+    }
+
+    .section-purchase .column:last-child {
+        margin-bottom: 0;
+    }
+
+    #sidebar {
+        margin-top: 50px;
+    }
+
+    #sidebar .sidebar {
+        padding: 0;
+        border: none;
+    }
+
+    .post-widget-img {
+        width: 12%;
+    }
+
+    .post-widget h4 {
+        width: 88%;
+    }
+
+    .col-login,
+    .col-register {
+        padding: 0 15px
+    }
+
+    #footer-widgets {
+        max-width: 500px;
+        margin: auto;
+        text-align: center;
+    }
+
+    #footer .column {
+        margin-bottom: 42px;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .header-content {
+        padding: 72px 0;
+    }
+
+    .header-heading {
+        font-size: 52px;
+    }
+
+    .header-heading span {
+        font-size: 42px;
+    }
+
+    .col-right {
+        order: unset;
+    }
+
+    .thumbnail-right,
+    #footer .column:last-child {
+        margin: 0;
+    }
+
+    .section-features .feature-row {
+        max-width: 370px;
+        margin: 0 auto;
+    }
+
+    .section-features .row {
+        margin: 10px 0 0;
+    }
+
+    .section-features .column,
+    .section-review .content-wrap {
+        padding: 0;
+    }
+
+    .section-features .d-flex {
+        width: 100%;
+        margin-bottom: 30px;
+        box-shadow: -5px -5px 25px rgba(144, 144, 152, .35);
+    }
+
+    .section-features .column:last-child .d-flex:last-child {
+        margin-bottom: 0;
+    }
+
+    .sec-image-thumbnail,
+    .section-facilities .thumbnail-right {
+        margin-bottom: 28px;
+    }
+
+    .section-facilities .demoslide {
+        margin-bottom: 32px;
+    }
+
+    .section-review {
+        background-color: #162a64;
+    }
+
+    .section-review figure {
+        display: none;
+    }
+
+    .slide-content {
+        position: unset;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .section-review h2 {
+        font-size: 52px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    .section-compare {
+        padding: 100px 0;
+    }
+
+    .table-compare {
+        display: block;
+        overflow: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .page-content {
+        padding: 40px 0;
+    }
+
+    .page-content .header-heading {
+        font-size: 48px;
+    }
+
+    .blog-article .col-content {
+        padding: 30px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .btn-buynow {
+        display: block;
+        width: 100%;
+        margin: 10px auto 0;
+        text-align: center;
+        border-radius: 0 !important;
+    }
+
+    .btn-mob {
+        display: none;
+    }
+
+    .header-content,
+    section,
+    .section-facilities,
+    .section-compare {
+        padding: 50px 0;
+    }
+
+    .section-features .d-flex {
+        flex-wrap: wrap;
+    }
+
+    .section-features .column span {
+        margin-bottom: 10px;
+    }
+
+    section .col-count-2 {
+        column-count: unset;
+    }
+
+    .section-demo-import .row.mt-5 {
+        margin-top: 0px !important;
+    }
+
+    section .btn {
+        font-size: 14px;
+        margin-top: 18px;
+        padding: 10px 26px;
+    }
+
+    .section-purchase .column:first-child {
+        margin-bottom: 68px;
+    }
+
+    .section-purchase .column:last-child:before {
+        top: -30px;
+        bottom: 15px;
+        right: 15px;
+        left: 30px;
+    }
+
+    .column-purchase {
+        margin: 0px 30px 0 0;
+    }
+
+    .column-purchase .price {
+        font-size: 72px;
+    }
+
+    .section-purchase h3 {
+        font-size: 16px;
+        padding: 16px 32px;
+        margin: 32px 0 16px;
+    }
+
+    .page-content p {
+        font-size: 16px;
+    }
+
+    .post-widget-img {
+        width: 20%;
+    }
+
+    .post-widget h4 {
+        width: 80%;
+    }
+
+    .single-post .navigation .column {
+        width: 100%;
+    }
+
+    .single-post .nav_direction .column:nth-child(2) {
+        margin-top: 38px;
+    }
+
+    .comment-respond p.comment-form-author,
+    .comment-respond p.comment-form-email,
+    .comment-form-url {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .error404 .page-content {
+        padding: 62px 0;
+    }
+
+    body.search .page-content .header-heading,
+    .error404 .page-content .header-heading {
+        font-size: 32px;
+    }
+
+    @keyframes moveSlideshow {
+        100% {
+            transform: translateY(-65%);
+        }
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .section-facilities .section-heading {
+        font-size: 32px;
+    }
+
+    .section-facilities .section-heading span,
+    .section-review h2,
+    .page-content .header-heading {
+        font-size: 42px;
+    }
+
+    .section-sub-heading {
+        font-size: 16px;
+    }
+
+    .section-facilities li,
+    .list-check li,
+    .list-check li a {
+        font-size: 14px;
+    }
+
+    .checked {
+        width: 9px;
+        height: 9px;
+        background-size: contain;
+    }
+
+    .section-features .section-heading,
+    .section-heading,
+    .section-purchase .section-heading {
+        font-size: 32px;
+        text-align: left;
+    }
+
+    .section-features .section-heading .clr-blu {
+        padding: 0 0 10px;
+        display: block;
+    }
+
+    .section-purchase .section-heading span {
+        font-size: 16px;
+    }
+
+    .section-purchase h3 {
+        font-size: 14px;
+    }
+
+    .blog-article .col-content {
+        padding: 15px;
+    }
+
+    .post-widget-img {
+        width: 25%;
+    }
+
+    .post-widget h4 {
+        width: 75%;
+    }
+
+    .beats-search .form-control {
+        padding: 10px;
+    }
+
+    .error404 .page-content .form-title {
+        font-size: 20px;
+    }
+
+    body.search .page-title {
+        font-size: 28px;
+    }
+
+    .card-body,
+    #comments,
+    .column-purchase {
+        padding: 15px;
+    }
+
+    #footer-widgets,
+    #footer-menu {
+        text-align: left;
+        max-width: 100%;
+    }
+
+    #footer-menu li .nav-link {
+        font-size: 12px;
+        padding: 0;
+        margin-right: 15px;
+    }
+
+    #footer-menu li:last-child .nav-link {
+        margin-right: 0;
+    }
+
+    body.log-in #edd_login_form {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 375px) {
+    .section-features .d-flex {
+        padding: 30px;
+    }
+
+    body.search .page-content .header-heading,
+    .error404 .page-content .header-heading {
+        font-size: 28px;
+    }
+}

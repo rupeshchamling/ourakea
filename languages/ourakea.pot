@@ -1,0 +1,326 @@
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ourakea 1.0.0\n"
+"POT-Creation-Date: 2019-06-06 13:00+0800\n"
+"PO-Revision-Date: 2019-06-06 13:00+0800\n"
+"Last-Translator: dinevthemes <post@dinevthemes.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_attr_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../comments.php:36
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: ../footer.php:23
+#, php-format
+msgid "Powered by %s"
+msgstr ""
+
+#: ../footer.php:28
+#, php-format
+msgid "Theme %1$s by %2$s"
+msgstr ""
+
+#: ../functions.php:52
+msgid "Primary"
+msgstr ""
+
+#: ../functions.php:132
+msgid "Sidebar"
+msgstr ""
+
+#: ../functions.php:134
+msgid "Add widgets here."
+msgstr ""
+
+#: ../search.php:25
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../searchform.php:17
+#: ../template-parts/navigation/add-item-search-form.php:17
+msgid "Search &hellip;"
+msgstr ""
+
+#: ../searchform.php:19
+#: ../template-parts/navigation/add-item-search-form.php:19
+msgid "Search"
+msgstr ""
+
+#: ../inc/customizer.php:38
+msgid "Main Menu Bar Background"
+msgstr ""
+
+#: ../inc/customizer.php:44
+msgid "Main Menu Color"
+msgstr ""
+
+#: ../inc/customizer.php:50
+msgid "Main Menu Hover Color"
+msgstr ""
+
+#: ../inc/customizer.php:56
+msgid "Site Title Color"
+msgstr ""
+
+#: ../inc/customizer.php:62
+msgid "Main Text Color"
+msgstr ""
+
+#: ../inc/customizer.php:68
+msgid "Entry/Post/Page Title Color"
+msgstr ""
+
+#: ../inc/customizer.php:74
+msgid "Entry Card Background"
+msgstr ""
+
+#: ../inc/customizer.php:80
+msgid "Entry Card: Footer Background"
+msgstr ""
+
+#: ../inc/customizer.php:86
+msgid "Widget Title Color"
+msgstr ""
+
+#: ../inc/customizer.php:92
+msgid "Text Link Color"
+msgstr ""
+
+#: ../inc/customizer.php:98
+msgid "Text Link Hover Color"
+msgstr ""
+
+#: ../inc/customizer.php:104
+msgid "Meta Text Color"
+msgstr ""
+
+#: ../inc/customizer.php:110
+msgid "Primary Button Color"
+msgstr ""
+
+#: ../inc/customizer.php:116
+msgid "Primary Button: Hover Color"
+msgstr ""
+
+#: ../inc/customizer.php:122
+msgid "Primary Button: Active Color"
+msgstr ""
+
+#: ../inc/customizer.php:128
+msgid "Footer Background"
+msgstr ""
+
+#: ../inc/customizer.php:134
+msgid "Footer Text Color"
+msgstr ""
+
+#: ../inc/customizer.php:170
+msgid "General Settings"
+msgstr ""
+
+#: ../inc/customizer.php:191
+msgid "Main Menu Bar Mode"
+msgstr ""
+
+#: ../inc/customizer.php:196 ../inc/customizer.php:298
+#: ../inc/customizer.php:393 ../inc/customizer.php:611
+#: ../inc/customizer.php:665 ../inc/customizer.php:684
+msgid "Standard"
+msgstr ""
+
+#: ../inc/customizer.php:197 ../inc/customizer.php:612
+msgid "Alternative"
+msgstr ""
+
+#: ../inc/customizer.php:219
+msgid "Main Menu: drop-down mode"
+msgstr ""
+
+#: ../inc/customizer.php:220
+msgid ""
+"Default a drop-down submenu by hover, parent link is active. Bootstrap mode: "
+"a drop-down submenu by click, the parent link is not active."
+msgstr ""
+
+#: ../inc/customizer.php:225 ../inc/customizer.php:628
+msgid "Default"
+msgstr ""
+
+#: ../inc/customizer.php:226 ../inc/customizer.php:629
+msgid "Bootstrap"
+msgstr ""
+
+#: ../inc/customizer.php:248
+msgid "Sidebar Displays"
+msgstr ""
+
+#: ../inc/customizer.php:253 ../inc/customizer.php:646
+msgid "Right sidebar"
+msgstr ""
+
+#: ../inc/customizer.php:254 ../inc/customizer.php:647
+msgid "Left sidebar"
+msgstr ""
+
+#: ../inc/customizer.php:255 ../inc/customizer.php:648
+msgid "No sidebar"
+msgstr ""
+
+#: ../inc/customizer.php:270
+msgid "Posts page Settings"
+msgstr ""
+
+#: ../inc/customizer.php:293
+msgid "Posts page navigation"
+msgstr ""
+
+#: ../inc/customizer.php:299 ../inc/customizer.php:666
+msgid "Numeric"
+msgstr ""
+
+#: ../inc/customizer.php:319
+msgid "Read More button"
+msgstr ""
+
+#: ../inc/customizer.php:320
+msgid ""
+"Enter the button name which is a link to the full post. You can leave this "
+"blank if you want to hide the button."
+msgstr ""
+
+#: ../inc/customizer.php:332
+msgid "&mdash; Select Post &mdash;"
+msgstr ""
+
+#: ../inc/customizer.php:362
+msgid "Featured Post"
+msgstr ""
+
+#: ../inc/customizer.php:387
+msgid "Layout Style"
+msgstr ""
+
+#: ../inc/customizer.php:392 ../inc/customizer.php:683
+msgid "List"
+msgstr ""
+
+#: ../inc/customizer.php:408
+msgid "Front Page Settings"
+msgstr ""
+
+#: ../inc/customizer.php:422
+msgid "General"
+msgstr ""
+
+#: ../inc/customizer.php:441
+msgid "Hide Page Title"
+msgstr ""
+
+#: ../inc/customizer.php:454
+msgid "Head Banner"
+msgstr ""
+
+#: ../inc/customizer.php:474
+msgid "Heading"
+msgstr ""
+
+#: ../inc/customizer.php:496
+msgid "Sub-Heading"
+msgstr ""
+
+#: ../inc/customizer.php:518
+msgid "Button Label"
+msgstr ""
+
+#: ../inc/customizer.php:539
+msgid "Button Link"
+msgstr ""
+
+#: ../inc/customizer.php:562
+msgid "Background Color"
+msgstr ""
+
+#: ../inc/customizer.php:583
+msgid "Background Image"
+msgstr ""
+
+#: ../inc/template-functions.php:101
+#, php-format
+msgid "%1$s<span class=\"screen-reader-text\">%2$s</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:28 ../template-parts/content-page.php:34
+#: ../template-parts/front-page/content.php:33
+#: ../template-parts/post/single.php:59
+msgid "Pages:"
+msgstr ""
+
+#: ../inc/template-tags.php:86
+msgid ", "
+msgstr ""
+
+#: ../inc/template-tags.php:89
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: ../inc/template-tags.php:96
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: ../inc/template-tags.php:106
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:123 ../template-parts/front-page/content.php:46
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:148
+msgid "Edit"
+msgstr ""
+
+#: ../inc/template-tags.php:163
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:170
+msgid ""
+"<span style=\"margin-left: 5px;\" class=\"glyphicon glyphicon-edit\"></span> "
+"Edit"
+msgstr ""
+
+#: ../inc/wp-bootstrap-navwalker.php:364
+msgid "Add a menu"
+msgstr ""
+
+#: ../template-parts/content-none.php:23
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../template-parts/content-page.php:46
+#, php-format
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: ../template-parts/post/single.php:54
+#, php-format
+msgid "Continue reading%s"
+msgstr ""
