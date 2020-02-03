@@ -84,4 +84,10 @@ jQuery(document).ready(function ($) {
 
     $('.error404 div').remove('#content');
 
+    // Adding Class In Cart Parent On Click
+
+    $('.btn-search').click(function () {
+        $('.search_form').toggleClass('show');
+    });
+
 });

@@ -381,7 +381,6 @@ h6 {
 
 .main-navigation {
     padding: 20px 0 50px;
-    z-index: 9;
     background-color: #ffffff;
 }
 
@@ -432,6 +431,91 @@ h6 {
 
 .btn-mob {
     display: none;
+}
+
+/* -- Navbar Cart And Search Styles -- */
+
+.btn-search:before,
+.search-icon:before {
+    content: '';
+    background-image: url("../../assets/images/search-btn.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    display: block;
+    cursor: pointer;
+}
+
+.btn-search {
+    display: inline-block;
+}
+
+.btn-search:before {
+    background-image: url("../../assets/images/search.png");
+    height: 24px;
+    width: 24px;
+}
+
+.search_form {
+    position: relative;
+    display: flex;
+}
+
+.search_form .form {
+    display: none;
+    position: absolute;
+    top: -100%;
+    right: 0;
+    z-index: 9;
+    margin-top: 38px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px -2px rgba(0, 0, 0, 0.23);
+    animation: fadeInSide .2s ease-in;
+}
+
+.search_form.show .form {
+    display: block;
+}
+
+.search_form label {
+    display: none;
+}
+
+.search_form .input-group {
+    position: relative;
+    height: 55px;
+    width: 280px;
+    max-width: 100%;
+    padding: 5px;
+}
+
+.search_form .form-control {
+    font-size: 14px;
+    color: #969696;
+    border: 1px solid #ececec;
+    border-radius: 0;
+    padding: 0 56px 0 10px;
+}
+
+.search_form .form-control:focus {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.search_form .input-group-wrap {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    z-index: 9;
+    overflow: hidden;
+}
+
+.search_form .submit {
+    height: 100%;
+    padding: 15px;
+    cursor: pointer;
 }
 
 /* -- Header Content Styles -- */
