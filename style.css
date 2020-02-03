@@ -78,7 +78,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .gallery figure {
     display: inline-grid;
-    padding: 2px;
+    padding: 8px;
     margin-bottom: 0;
 }
 
@@ -124,7 +124,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .gallery {
-    margin: 0 -1px;
+    margin: 0 -8px;
 }
 
 .gallery-columns-5 figure,

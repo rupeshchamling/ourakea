@@ -39,10 +39,6 @@
 			}
 			?>
 
-			<?php if ( is_front_page() ) : ?>
-			<a href="#buytheme" class="btn-uni btn-white br-round btn-buynow bold-7 m-0 btn-mob">Buy Now</a>
-			<?php endif; ?>
-
 			<button id="menu" class="navbar-toggler collapsed" type="button" data-toggle="collapse"
 				data-target="#navbarmenus">
 				<span></span>
@@ -64,10 +60,6 @@
 				)
 			);
 			?>
-
-			<?php if ( is_front_page() ) : ?>
-				<a href="#buytheme" class="btn-uni btn-white br-round btn-buynow bold-7">Buy Now</a>
-			<?php endif; ?>
 
 		</div>
 	</nav>

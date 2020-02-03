@@ -21,9 +21,6 @@
 }
 
 @media (max-width: 991px) {
-    .btn-buynow {
-        display: none;
-    }
 
     .btn-mob {
         display: block;
@@ -245,13 +242,6 @@
 }
 
 @media (max-width: 576px) {
-    .btn-buynow {
-        display: block;
-        width: 100%;
-        margin: 10px auto 0;
-        text-align: center;
-        border-radius: 0 !important;
-    }
 
     .btn-mob {
         display: none;

@@ -23,15 +23,6 @@ jQuery(document).ready(function ($) {
         });
     }
 
-    // Smooth Scrolling For Buy Button To Its Content
-
-    $('.btn-buynow, .btn-features, .btn.demos').click(function (event) {
-        event.preventDefault();
-        $('html,body').animate({
-            scrollTop: $(this.hash).offset().top
-        }, 1000);
-    });
-
     // To top Java Script
 
     $(window).scroll(function () {

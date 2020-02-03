@@ -32,12 +32,31 @@ if ( ! function_exists( 'ourakea_entry_summary' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'ourakea_posted_by' ) ) :
+	/**
+	 * Prints HTML with meta information for the current author.
+	 */
+	function ourakea_posted_by() {
+
+		$avatar = get_avatar_url( get_the_author_meta( 'ID' ), ['size' => '36'] );
+
+		$byline = sprintf(
+			/* translators: %s: post author. */
+			esc_html_x( ' %s', 'post author', 'ourakea' ),
+			'<a class="author" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		);
+
+		echo '<span class="byline"> <img src="'.$avatar.'" class="avatar-img">' . $byline; // WPCS: XSS OK.
+
+	}
+endif;
+
 if ( ! function_exists( 'ourakea_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
 	function ourakea_posted_on() {
-		$time_string = '<i class="far fa-calendar-alt"></i> <time class="entry-date published" datetime="%1$s">%2$s</time>';
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 
 		$time_string = sprintf(
 			$time_string,
@@ -54,22 +73,6 @@ if ( ! function_exists( 'ourakea_posted_on' ) ) :
 		);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
-	}
-endif;
-
-if ( ! function_exists( 'ourakea_posted_by' ) ) :
-	/**
-	 * Prints HTML with meta information for the current author.
-	 */
-	function ourakea_posted_by() {
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( ' %s', 'post author', 'ourakea' ),
-			'<a class="author" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
-
-		echo '<span class="byline"><i class="fas fa-user"></i> ' . $byline; // WPCS: XSS OK.
-
 	}
 endif;
 

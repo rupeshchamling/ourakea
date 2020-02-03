@@ -199,7 +199,7 @@ function ourakea_scripts() {
 	wp_enqueue_script( 'slick-js', get_theme_file_uri( '/assets/js/slick.js' ), array(), '1.0.0', true );
 
 	// Font Montserrat (Google Font)
-	wp_enqueue_style( 'ourakea-custom-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900&display=swap', false );
+	wp_enqueue_style( 'ourakea-custom-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:500|Poppins:400,500,700&display=swap', false );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -212,13 +212,11 @@ add_action( 'wp_enqueue_scripts', 'ourakea_scripts' );
  */
 require get_template_directory() . '/inc/init.php';
 
-function wildspirit_add_classes_on_link_attributes( $classes ) {
+function ourakea_add_classes_on_link_attributes( $classes ) {
 	$classes['class'] = 'nav-link';
 	return $classes;
 }
-add_filter( 'nav_menu_link_attributes', 'wildspirit_add_classes_on_link_attributes' );
+add_filter( 'nav_menu_link_attributes', 'ourakea_add_classes_on_link_attributes' );
 
 /** Post Widget with images **/
 require get_template_directory() . '/inc/post_widget.php';
-
-

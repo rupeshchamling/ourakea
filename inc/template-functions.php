@@ -170,7 +170,7 @@ add_filter( 'comment_reply_link', 'ourakea_comment_reply_link', 99 );
  * Custom Excerpt lengths.
  */
 function ourakea_custom_excerpt_length() {
-	return 16;
+	return 55;
 }
 add_filter( 'excerpt_length', 'ourakea_custom_excerpt_length' );
 
