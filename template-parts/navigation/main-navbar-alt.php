@@ -12,7 +12,7 @@
 <?php if ( get_theme_mod( 'mainmenu_dropdown_mode' ) !== 'bootstrap' ) { ?>
 
 <div class="top-bar">
-    <div class="container">
+    <div class="container align-center">
         <?php
 			if ( ! has_custom_logo() ) {
 				if ( is_front_page() && is_home() ) :
@@ -35,12 +35,6 @@
 				the_custom_logo();
 			}
 			?>
-
-        <div class="shopping-wrap align-items-center">
-            <?php
-				get_template_part( 'template-parts/navigation/add-item', 'search-form' );
-				?>
-        </div>
     </div>
 </div>
 
@@ -70,7 +64,13 @@
 					'fallback_cb'     => 'Ourakea_WP_Bootstrap_Navwalker::fallback',
 				)
 			);
-			?>
+            ?>
+
+            <div class="align-items-center">
+                <?php
+				get_template_part( 'template-parts/navigation/add-item', 'search-form' );
+				?>
+            </div>
 
         </div><!-- .container -->
     </nav><!-- .site-navigation -->

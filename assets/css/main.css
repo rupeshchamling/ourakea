@@ -402,7 +402,7 @@ h6 {
 }
 
 .custom-logo-link .custom-logo {
-    width: 250px;
+    width: 176px;
 }
 
 .nav-search .navbar-nav {
@@ -441,6 +441,7 @@ h6 {
     background-image: url("../../assets/images/search-btn.png");
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     height: 16px;
     width: 16px;
     display: block;
@@ -453,29 +454,34 @@ h6 {
 
 .btn-search:before {
     background-image: url("../../assets/images/search.png");
-    height: 24px;
-    width: 24px;
 }
 
 .search_form {
-    position: relative;
-    display: flex;
+    line-height: 1;
 }
 
 .search_form .form {
     display: none;
-    position: absolute;
-    top: -100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
     right: 0;
+    left: 0;
     z-index: 9;
-    margin-top: 38px;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 10px -2px rgba(0, 0, 0, 0.23);
-    animation: fadeInSide .2s ease-in;
+    height: 100vh;
 }
 
-.search_form.show .form {
-    display: block;
+.search_form .form-wrap {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.88);
+}
+
+.search-icon:before {
+    height: 25px;
+    width: 25px;
 }
 
 .search_form label {
@@ -484,18 +490,24 @@ h6 {
 
 .search_form .input-group {
     position: relative;
-    height: 55px;
-    width: 280px;
+    width: 680px;
     max-width: 100%;
-    padding: 5px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ffffff;
 }
 
 .search_form .form-control {
-    font-size: 14px;
-    color: #969696;
-    border: 1px solid #ececec;
-    border-radius: 0;
-    padding: 0 56px 0 10px;
+    font-size: 18px;
+    padding: 0;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    letter-spacing: 1px;
+}
+
+.search_form .form-control::placeholder {
+    font-size: 32px;
+    color: #ffffff;
 }
 
 .search_form .form-control:focus {
@@ -503,19 +515,18 @@ h6 {
     box-shadow: none;
 }
 
-.search_form .input-group-wrap {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    bottom: 5px;
-    z-index: 9;
-    overflow: hidden;
-}
-
-.search_form .submit {
+.search_form .submit,
+.search_form .btn-close {
     height: 100%;
     padding: 15px;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.search_form .btn-close {
+    font-size: 28px;
+    color: #ffffff;
 }
 
 /* -- Header Content Styles -- */
@@ -1183,6 +1194,10 @@ section .btn {
     margin: 0 0 70px;
 }
 
+.post-image-wrap {
+    position: relative;
+}
+
 .blog-article figure {
     margin-bottom: 44px;
     overflow: hidden;
@@ -1195,6 +1210,37 @@ section .btn {
 
 .blog-article .attachment-post-thumbnail:hover {
     transform: scale(1.1);
+}
+
+.blog-article .post-comments {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    position: absolute;
+    bottom: -13px;
+    left: -15px;
+    background-color: #ffffff;
+    color: #444444;
+    height: 78px;
+    width: 78px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 18px 0;
+    z-index: 1;
+}
+
+.blog-article .post-comments a {
+    color: #444444;
+    width: 100%;
+}
+
+.blog-article .post-comments i {
+    font-size: 18px;
 }
 
 .blog-article .col-content {
@@ -1524,7 +1570,7 @@ span.page-numbers.current {
 
 #sidebar section {
     padding: 0;
-    margin: 0 0 48px;
+    margin: 0 0 60px;
 }
 
 

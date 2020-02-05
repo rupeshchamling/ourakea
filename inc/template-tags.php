@@ -7,6 +7,17 @@
  * @package Ourakea
  */
 
+if ( ! function_exists( 'tihar_post_comments' ) ) :
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+	function ourakea_post_comments() {
+
+		?><span class="post-comments"><i
+        class="far fa-comments"></i><?php comments_popup_link( '0' , '1' , '%' ); ?></span>
+<?php }
+	endif;
+
 if ( ! function_exists( 'ourakea_entry_summary' ) ) :
 	/**
 	 *
@@ -130,61 +141,61 @@ if ( ! function_exists( 'ourakea_comment' ) ) :
 		if ( 'pingback' === $comment->comment_type || 'trackback' === $comment->comment_type ) : ?>
 
 <li id="comment-<?php comment_ID(); ?>" <?php comment_class( 'media' ); ?>>
-	<div class="comment-body">
-			<?php esc_html_e( 'Pingback:', 'ourakea' ); ?> <?php comment_author_link(); ?>
-			<?php edit_comment_link( __( 'Edit', 'ourakea' ), '<span class="edit-link">', '</span>' ); ?>
-	</div>
+    <div class="comment-body">
+        <?php esc_html_e( 'Pingback:', 'ourakea' ); ?> <?php comment_author_link(); ?>
+        <?php edit_comment_link( __( 'Edit', 'ourakea' ), '<span class="edit-link">', '</span>' ); ?>
+    </div>
 
-			<?php
+    <?php
 		else :
 			?>
 
 <li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
-	<article id="div-comment-<?php comment_ID(); ?>" class="comment-body media mb-4">
-		<a class="pull-left" href="#">
-			<?php
+    <article id="div-comment-<?php comment_ID(); ?>" class="comment-body media mb-4">
+        <a class="pull-left" href="#">
+            <?php
 			if ( 0 !== $args['avatar_size'] ) {
 				echo get_avatar( $comment, $args['avatar_size'], '', '', array( 'class' => 'rounded-circle' ) );}
 			?>
-		</a>
+        </a>
 
-		<div class="media-body">
-			<div class="media-body-wrap card">
-				<div class="card-header">
-					<h5 class="mt-0">
-						<?php
+        <div class="media-body">
+            <div class="media-body-wrap card">
+                <div class="card-header">
+                    <h5 class="mt-0">
+                        <?php
 							printf( /* translators: %s: comment author link */
 								__( '%s <span class="says">says:</span>', 'ourakea' ),
 								sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() )
 							);
 						?>
-					</h5>
-					<div class="comment-meta">
-						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-							<time datetime="<?php comment_time( 'c' ); ?>">
-								<?php
+                    </h5>
+                    <div class="comment-meta">
+                        <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+                            <time datetime="<?php comment_time( 'c' ); ?>">
+                                <?php
 										printf( /* translators: %s: comment time */
 											esc_html_x( '%1$s at %2$s', '1: date, 2: time', 'ourakea' ),
 											get_comment_date(),
 											get_comment_time()
 										); // WPCS: XSS OK.
 								?>
-							</time>
-						</a>
-						<?php edit_comment_link( __( '<span style="margin-left: 5px;" class="glyphicon glyphicon-edit"></span> Edit', 'ourakea' ), '<span class="edit-link">', '</span>' ); ?>
-					</div>
-				</div>
+                            </time>
+                        </a>
+                        <?php edit_comment_link( __( '<span style="margin-left: 5px;" class="glyphicon glyphicon-edit"></span> Edit', 'ourakea' ), '<span class="edit-link">', '</span>' ); ?>
+                    </div>
+                </div>
 
-				<?php if ( '0' === $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation">
-					<?php esc_html_e( 'Your comment is awaiting moderation.', 'ourakea' ); ?></p>
-				<?php endif; ?>
+                <?php if ( '0' === $comment->comment_approved ) : ?>
+                <p class="comment-awaiting-moderation">
+                    <?php esc_html_e( 'Your comment is awaiting moderation.', 'ourakea' ); ?></p>
+                <?php endif; ?>
 
-				<div class="comment-content card-block">
-					<?php comment_text(); ?>
-				</div><!-- .comment-content -->
+                <div class="comment-content card-block">
+                    <?php comment_text(); ?>
+                </div><!-- .comment-content -->
 
-				<?php
+                <?php
 						$args = array();
 						comment_reply_link(
 							array_merge(
@@ -200,13 +211,13 @@ if ( ! function_exists( 'ourakea_comment' ) ) :
 						);
 				?>
 
-			</div>
-		</div><!-- .media-body -->
+            </div>
+        </div><!-- .media-body -->
 
-	</article>
+    </article>
 </li>
 
-			<?php
+<?php
 		endif;
 	}
 endif;

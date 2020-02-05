@@ -9,11 +9,15 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="post article-post blog-article" >
+<article id="post-<?php the_ID(); ?>" class="post article-post blog-article">
 
-    <figure>
-        <?php the_post_thumbnail(); ?>
-    </figure>
+    <div class="post-image-wrap">
+        <?php ourakea_post_comments(); ?>
+
+        <figure>
+            <?php the_post_thumbnail(); ?>
+        </figure>
+    </div>
 
     <div class="post-wrap">
         <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>

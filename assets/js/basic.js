@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
 
     $(window).scroll(function () {
         var height = $(window).scrollTop();
-        if (height > 200) {
+        if (height > 20) {
             $('.main-navigation').addClass('fixed');
         } else {
             $('.main-navigation').removeClass('fixed');
@@ -87,7 +87,11 @@ jQuery(document).ready(function ($) {
     // Adding Class In Cart Parent On Click
 
     $('.btn-search').click(function () {
-        $('.search_form').toggleClass('show');
+        $('.search_form .form').fadeIn();
+    });
+
+    $('.search_form .btn-close').click(function () {
+        $('.search_form .form').fadeOut();
     });
 
 });
