@@ -87,11 +87,27 @@ if ( ! function_exists( 'ourakea_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'ourakea_entry_footer' ) ) :
+if ( ! function_exists( 'ourakea_post_tag' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function ourakea_entry_footer() {
+	function ourakea_post_tag() {
+		// Hide category and tag text for pages.
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'ourakea' ) );
+			if ( $tags_list ) {
+				/* translators: 1: list of tags. */
+				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'ourakea' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			}
+		}
+	}
+endif;
+if ( ! function_exists( 'ourakea_post_category' ) ) :
+	/**
+	 * Prints HTML with meta information for the categories.
+	 */
+	function ourakea_post_category() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
@@ -100,14 +116,15 @@ if ( ! function_exists( 'ourakea_entry_footer' ) ) :
 				/* translators: 1: list of categories. */
 				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'ourakea' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
-
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'ourakea' ) );
-			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'ourakea' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-			}
 		}
+	}
+endif;
+
+if ( ! function_exists( 'ourakea_edit_link' ) ) :
+	/**
+	 * Prints HTML with meta information edit link.
+	 */
+	function ourakea_edit_link() {
 
 		edit_post_link(
 			sprintf(

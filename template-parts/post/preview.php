@@ -11,26 +11,28 @@
 
 <article id="post-<?php the_ID(); ?>" class="post article-post blog-article">
 
-    <div class="post-image-wrap">
-        <?php ourakea_post_comments(); ?>
+	<div class="post-image-wrap">
+		<?php ourakea_post_comments(); ?>
 
-        <figure>
-            <?php the_post_thumbnail(); ?>
-        </figure>
-    </div>
+		<figure>
+			<?php the_post_thumbnail(); ?>
+		</figure>
+	</div>
 
-    <div class="post-wrap">
-        <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+	<div class="post-wrap">
+		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-        <div class="entry-meta">
-            <?php ourakea_posted_by(); ?>
-            <?php ourakea_posted_on(); ?>
-            <?php ourakea_entry_footer(); ?>
-        </div>
+		<div class="entry-meta">
+			<?php ourakea_posted_by(); ?>
+			<?php ourakea_posted_on(); ?>
+			<?php ourakea_post_category(); ?>
+			<?php ourakea_post_tag(); ?>
+		</div>
 
-        <div class="entry-summary card-text">
-            <?php ourakea_entry_summary(); ?>
-        </div>
-    </div>
+		<div class="entry-summary card-text">
+			<?php ourakea_entry_summary(); ?>
+		</div>
+		<?php ourakea_edit_link(); ?>
+	</div>
 
 </article><!-- #post-<?php the_ID(); ?> -->
