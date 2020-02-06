@@ -57,7 +57,7 @@ class ourakea_post_widget_class extends WP_Widget {
 				while ( $loop->have_posts() ) :
 					$loop->the_post();
 					?>
-				
+
 					<div class="post-widget">
 						<?php if ( ( function_exists( 'has_post_thumbnail' ) ) && ( has_post_thumbnail() ) ) : ?>
 						<div class="post-widget-img">
@@ -72,7 +72,7 @@ class ourakea_post_widget_class extends WP_Widget {
 
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
-				
+
 			</div>
 			<?php
 
@@ -99,11 +99,11 @@ class ourakea_post_widget_class extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'ourakea' ); ?></label>
 			<input  type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_html( $instance['title'] ); ?>"  />
 		</p>
-		
+
 		<p>
 		<label for="<?php echo $this->get_field_id( 'categories' ); ?>"><?php esc_html_e( 'Filter By Category:', 'ourakea' ); ?></label> 
 		<select id="<?php echo $this->get_field_id( 'categories' ); ?>" name="<?php echo $this->get_field_name( 'categories' ); ?>" class="widefat categories" style="width:100%;">
-		
+
 			<option value='all' 
 			<?php
 			if ( 'all' == $instance['categories'] ) {
@@ -113,7 +113,7 @@ class ourakea_post_widget_class extends WP_Widget {
 			<?php $categories = get_categories( 'hide_empty=0&depth=1&type=post' ); ?>
 			<?php foreach ( $categories as $category ) { ?>
 			<option value='<?php echo $category->term_id; ?>' 
-									  <?php
+									<?php
 										if ( $category->term_id == $instance['categories'] ) {
 											echo 'selected="selected"';}
 										?>
@@ -121,7 +121,7 @@ class ourakea_post_widget_class extends WP_Widget {
 			<?php } ?>
 		</select>
 		</p>
-		
+
 		<p>
 			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php esc_html_e( 'Number of posts to show:', 'ourakea' ); ?></label>
 			<input  type="text" class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" value="<?php echo esc_html( $instance['number'] ); ?>" size="3" />

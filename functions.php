@@ -71,20 +71,6 @@ if ( ! function_exists( 'ourakea_setup' ) ) :
 		);
 
 		/**
-		 * Add support for core custom header feature.
-		 *
-		 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#custom-header
-		 */
-		$defaults = array(
-			'default-image' => '',
-			'header-text'   => false,
-			'width'         => 1900,
-			'height'        => 1200,
-			'flex-height'   => true,
-		);
-		add_theme_support( 'custom-header', $defaults );
-
-		/**
 		 * Add support for core custom background feature.
 		 *
 		 * @link https://codex.wordpress.org/Custom_Backgrounds

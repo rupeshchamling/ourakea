@@ -618,6 +618,101 @@ Kirki::add_field(
 );
 
 
+/**
+ *
+ * Add Section
+ */
+Kirki::add_section(
+	'header_background',
+	array(
+		'title'    => __( 'Header Background Image', 'ourakea' ),
+		'priority' => 160,
+	)
+);
+
+// Setting background image global
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'image',
+		'settings' => 'global_header_bg',
+		'label'    => esc_html__( 'Global Header Background Image', 'ourakea' ),
+		'section'  => 'header_background',
+	)
+);
+
+
+
+// Setting background image blog
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'image',
+		'settings' => 'blog_header_bg',
+		'label'    => esc_html__( 'Blog Header Background Image', 'ourakea' ),
+		'section'  => 'header_background',
+	)
+);
+
+// Setting background image single
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'image',
+		'settings' => 'single_header_bg',
+		'label'    => esc_html__( 'Single Header Background Image', 'ourakea' ),
+		'section'  => 'header_background',
+	)
+);
+
+
+// Setting background image archive
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'image',
+		'settings' => 'archive_header_bg',
+		'label'    => esc_html__( 'Archive Header Background Image', 'ourakea' ),
+		'section'  => 'header_background',
+	)
+);
+
+
+// Setting background image search
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'image',
+		'settings' => 'search_header_bg',
+		'label'    => esc_html__( 'Search Header Background Image', 'ourakea' ),
+		'section'  => 'header_background',
+	)
+);
+
+
+// Setting background image page
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'image',
+		'settings' => 'page_header_bg',
+		'label'    => esc_html__( 'Page Header Background Image', 'ourakea' ),
+		'section'  => 'header_background',
+	)
+);
+
+// Setting background image 404
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'image',
+		'settings' => '404_header_bg',
+		'label'    => esc_html__( '404 Header Background Image', 'ourakea' ),
+		'section'  => 'header_background',
+	)
+);
+
+
 
 /**
  * Render the site title for the selective refresh partial.
@@ -824,3 +919,48 @@ function ourakea_customizer_css() {
 	<?php
 }
 add_action( 'wp_head', 'ourakea_customizer_css' );
+
+/**
+ * Output generated a line of CSS from customizer values in header output.
+ *
+ * @link https://codex.wordpress.org/Theme_Customization_API#Sample_Theme_Customization_Class
+ *
+ * Used by hook: 'wp_head'
+ *
+ * @see add_action('wp_head',$func)
+ */
+function ourakea_header_background_css() {
+	?>
+<!--Header background CSS-->
+<style type="text/css">
+	<?php if ( get_theme_mod( 'global_header_bg' ) && ! is_front_page() ) : ?>
+		.header-wrap .page-content {background-image: url(<?php echo esc_url( get_theme_mod( 'global_header_bg' ) ); ?>);}
+	<?php endif; ?>
+
+	<?php if ( get_theme_mod( 'blog_header_bg' ) && ! is_front_page() && is_home() ) : ?>
+		.header-wrap .page-content {background-image: url(<?php echo esc_url( get_theme_mod( 'blog_header_bg' ) ); ?>);}
+	<?php endif; ?>
+
+	<?php if ( get_theme_mod( 'single_header_bg' ) && is_single() ) : ?>
+		.header-wrap .page-content {background-image: url(<?php echo esc_url( get_theme_mod( 'single_header_bg' ) ); ?>);}
+	<?php endif; ?>
+
+	<?php if ( get_theme_mod( 'archive_header_bg' ) && is_archive() ) : ?>
+		.header-wrap .page-content {background-image: url(<?php echo esc_url( get_theme_mod( 'archive_header_bg' ) ); ?>);}
+	<?php endif; ?>
+
+	<?php if ( get_theme_mod( 'search_header_bg' ) && is_search() ) : ?>
+		.header-wrap .page-content {background-image: url(<?php echo esc_url( get_theme_mod( 'search_header_bg' ) ); ?>);}
+	<?php endif; ?>
+
+	<?php if ( get_theme_mod( 'page_header_bg' ) && is_page() ) : ?>
+		.header-wrap .page-content {background-image: url(<?php echo esc_url( get_theme_mod( 'page_header_bg' ) ); ?>);}
+	<?php endif; ?>
+
+	<?php if ( get_theme_mod( '404_header_bg' ) && is_404() ) : ?>
+		.header-wrap .page-content {background-image: url(<?php echo esc_url( get_theme_mod( '404_header_bg' ) ); ?>);}
+	<?php endif; ?>
+</style>
+	<?php
+}
+add_action( 'wp_head', 'ourakea_header_background_css' );
