@@ -199,7 +199,7 @@ function ourakea_scripts() {
 	wp_enqueue_script( 'slick-js', get_theme_file_uri( '/assets/js/slick.js' ), array(), '1.0.0', true );
 
 	// Font Montserrat (Google Font)
-	wp_enqueue_style( 'ourakea-custom-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:500|Poppins:400,500,700&display=swap', false );
+	wp_enqueue_style( 'ourakea-custom-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:500,800|PT+Serif:400,700|Poppins:400,500,600,700&display=swap', false );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

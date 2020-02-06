@@ -20,7 +20,7 @@ if ( get_theme_mod( 'sidebar_position' ) === 'right' ) {
 }
 ?>
 
-<aside id="sidebar" class="widget-area col-lg-4 <?php echo esc_attr( $ourakea_sidebar_order ); ?>">
+<aside id="sidebar" class="widget-area col-lg-4 <?php echo esc_attr( $ourakea_sidebar_order ); ?> column">
 	<div class="sidebar">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div>

@@ -48,7 +48,7 @@ if ( ! function_exists( 'ourakea_posted_by' ) ) :
 	 * Prints HTML with meta information for the current author.
 	 */
 	function ourakea_posted_by() {
-
+		global $post;
 		$avatar = get_avatar_url( get_the_author_meta( 'ID' ), ['size' => '36'] );
 
 		$byline = sprintf(

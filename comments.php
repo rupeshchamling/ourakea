@@ -33,13 +33,13 @@ if ( post_password_required() ) {
 			if ( '1' === $ourakea_comment_count ) {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'ourakea' ),
+					esc_html__( '1 Response', 'ourakea' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $ourakea_comment_count, 'comments title', 'ourakea' ) ),
+					esc_html( _nx( '%1$s Responses', '%1$s Responses', $ourakea_comment_count, 'comments title', 'ourakea' ) ),
 					number_format_i18n( $ourakea_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);

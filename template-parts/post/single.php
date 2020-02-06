@@ -9,45 +9,31 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="single-article box-shadow">
+<article id="post-<?php the_ID(); ?>" class="single-article">
 
-	<figure class="m-0">
-		<?php the_post_thumbnail(); ?>
-	</figure>
+    <div class="single-content">
 
-	<div class="card-body">
+        <h1 class="post-title align-center"><?php single_post_title(); ?></h1>
+        <div class="entry-meta align-center">
+            <?php ourakea_posted_by(); ?>
+            <?php ourakea_posted_on(); ?>
+            <?php ourakea_entry_footer(); ?>
+        </div>
 
-		<div class="entry-links">
-			<?php ourakea_entry_footer(); ?>
-		</div>
-		<header class="entry-header">
-			<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-		</header>
+        <figure class="post-thumbnail">
+            <?php the_post_thumbnail(); ?>
+        </figure>
 
-		<?php
-		if ( get_post_type() === 'post' ) {
-			?>
-		<div class="entry-meta mb-3">
-			<?php
-			ourakea_posted_by();
-			ourakea_posted_on();
-			?>
-		</div>
-
-			<?php
-		}
-		?>
-
-		<?php
+        <?php
 		if ( has_excerpt() ) :
 			?>
-		<div class="lead"><?php the_excerpt(); ?></div>
-			<?php
+        <div class="lead"><?php the_excerpt(); ?></div>
+        <?php
 		endif;
 		?>
 
-		<div class="entry-content">
-			<?php
+        <div class="entry-content mx-auto">
+            <?php
 			the_content(
 				sprintf(
 					/* translators: %s: Name of current post. Only visible to screen readers */
@@ -63,7 +49,7 @@
 				)
 			);
 			?>
-		</div><!-- .entry-content -->
+        </div><!-- .entry-content -->
 
-	</div><!-- .card-body -->
+    </div><!-- .card-body -->
 </article><!-- #post-<?php the_ID(); ?> -->
