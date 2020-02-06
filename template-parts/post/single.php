@@ -16,12 +16,13 @@
         <h1 class="post-title align-center"><?php single_post_title(); ?></h1>
         <div class="entry-meta align-center">
             <?php ourakea_posted_by(); ?>
-            <?php ourakea_posted_on(); ?>
-            <?php ourakea_entry_footer(); ?>
+			<?php ourakea_posted_on(); ?>
+			<?php ourakea_post_category(); ?>
         </div>
 
         <figure class="post-thumbnail">
-            <?php the_post_thumbnail(); ?>
+			<?php the_post_thumbnail(); ?>
+			<?php ourakea_post_tag(); ?>
         </figure>
 
         <?php

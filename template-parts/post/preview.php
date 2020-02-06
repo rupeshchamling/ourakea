@@ -26,11 +26,11 @@
 			<?php ourakea_posted_by(); ?>
 			<?php ourakea_posted_on(); ?>
 			<?php ourakea_post_category(); ?>
-			<?php ourakea_post_tag(); ?>
 		</div>
 
 		<div class="entry-summary card-text">
 			<?php ourakea_entry_summary(); ?>
+			<?php ourakea_post_tag(); ?>
 		</div>
 		<?php ourakea_edit_link(); ?>
 	</div>

@@ -339,6 +339,10 @@ h6 {
     margin: 0;
 }
 
+.custom-logo-link .custom-logo {
+    width: 300px;
+}
+
 .main-navigation.fixed .navbar-brand {
     font-size: 22px;
 }
@@ -346,10 +350,6 @@ h6 {
 .main-navigation.fixed .custom-logo-link .custom-logo {
     max-height: 55px;
     width: auto;
-}
-
-.custom-logo-link .custom-logo {
-    width: 176px;
 }
 
 .nav-search .navbar-nav {
@@ -614,6 +614,14 @@ section .col-content {
     text-transform: uppercase;
 }
 
+.tags-links a  {
+    font-size: 12px;
+    background-color: #f4f4f4;
+    color: #626262;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+}
+
 .entry-title {
     margin: 0 0 20px;
 }
@@ -843,7 +851,7 @@ span.page-numbers.current {
 
 .comment-form-author,
 .comment-form-email {
-    width: calc(50% - 10px);
+    width: calc(50% - 12px);
     display: inline-block;
     margin: 0 0 26px;
 }
