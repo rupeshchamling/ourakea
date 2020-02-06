@@ -614,8 +614,13 @@ section .col-content {
     text-transform: uppercase;
 }
 
+.tags-links {
+    display: block;
+    margin-top: 20px;
+}
+
 .tags-links a  {
-    font-size: 12px;
+    font-size: 10px;
     background-color: #f4f4f4;
     color: #626262;
     letter-spacing: 1px;
@@ -675,11 +680,6 @@ section .col-content {
 
 .entry-summary span.screen-reader-text {
     display: none;
-}
-
-.entry-summary a {
-    font-size: 14px;
-    color: #373b43;
 }
 
 /* -- Post Navigation -- */
@@ -1246,6 +1246,7 @@ section.widget p {
 
 .single .post-thumbnail {
     margin-bottom: 50px;
+    text-align: center;
 }
 
 .single .column .entry-content {
