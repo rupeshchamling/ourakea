@@ -10,15 +10,14 @@
 get_header();
 ?>
 
+<?php
+				if ( have_posts() ) :
+					?>
 <section class="section-search">
 	<div class="container">
 	<div class="row">
 		<div id="primary" class="content-area<?php ourakea_content_class(); ?> column">
 			<main id="main" class="site-main" role="main">
-
-				<?php
-				if ( have_posts() ) :
-					?>
 
 					<?php
 						/* Start the Loop */
@@ -46,9 +45,8 @@ get_header();
 						);
 					} else {
 						the_posts_navigation();
-					}
-		endif;
-			?>
+					} 
+					?>
 
 			</main>
 		</div><!-- #primary -->
@@ -64,4 +62,7 @@ get_header();
 </section><!-- /.section-search -->
 
 <?php
+
+endif;
+
 get_footer();

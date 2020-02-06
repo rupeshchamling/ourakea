@@ -60,12 +60,16 @@ if ( ! function_exists( 'ourakea_header_page_title' ) ) :
 <div class="page-content">
 	<div class="container">
 		<h1 class="header-heading">
-			<span><?php echo __( 'Oops!', 'ourakea' ); ?></span><?php echo esc_html__( ' That page can&#39;t be found.', 'ourakea' ); ?>
-		</h1>
+			<p><?php echo __( '404', 'ourakea' ); ?></p><?php echo esc_html__( ' page not found', 'ourakea' ); ?>
+        </h1>
+        
+        <span>Sorry, we couldn't find the page you're looking for.</span>
 
 		<div class="error-404 not-found">
 					<?php get_search_form(); ?>
-		</div>
+        </div>
+        
+        <a href="<?php echo home_url('/'); ?>">back to homepage</a>
 	</div>
 </div>
 			<?php else : ?>

@@ -317,7 +317,7 @@ h6 {
 /* -- Main Navigation Styles -- */
 
 .main-navigation {
-    padding: 20px 0 50px;
+    padding: 22px 0;
     background-color: #ffffff;
 }
 
@@ -1517,9 +1517,90 @@ section.widget p {
 
 /* -- Other Pagges ( Search Page, 404 Page, Nothing Found) -- */
 
-body.search .page-content .header-heading,
-.error404 .page-content .header-heading {
+body.search-no-results .page-content .header-heading {
     font-size: 100px;
     text-transform: uppercase;
     margin-bottom: 18px;
+}
+
+.error404 .page-content .header-heading {
+    font-family: "Montserrat", sans-serif;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.error404 .page-content .header-heading p {
+    font-size: 150px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0 0 32px;
+    line-height: 1;
+}
+
+body.search-no-results .header-wrap .page-content,
+.error404 .page-content {
+    min-height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+body.search-no-results .page-content span,
+.error404 .page-content span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+
+body.search-no-results .search-form,
+.error404 .page-content .search-form {
+    max-width: 480px;
+    margin: 42px auto 0;
+}
+
+body.search-no-results .input-group,
+.error404 .page-content .input-group {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+body.search-no-results .search-form input,
+.error404 .search-form input {
+    padding: 20px 10px;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: #ffffff;
+}
+
+body.search-no-results .search-form input::placeholder,
+.error404 .search-form input::placeholder {
+    color: #ffffff;
+}
+
+body.search-no-results .search-form input:focus,
+.error404 .search-form input:focus {
+    box-shadow: none;
+}
+
+body.search-no-results .search-form .input-group-append,
+.error404 .search-form .input-group-append {
+    margin: 0;
+}
+
+.error404 .page-content a {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    display: block;
+    margin-top: 18px;
+    text-transform: uppercase;
+}
+
+body.search section p {
+    font-family: 'Montserrat', sans-serif;
+    color: #787878;
 }

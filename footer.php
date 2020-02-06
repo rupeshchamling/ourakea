@@ -68,7 +68,7 @@
 		</div>
 	</div><!-- .container -->
 	<button class="up-btn" id="up-btn" title="<?php echo esc_html( __( 'Go to top', 'ghumgham' ) ); ?>"
-		style="display: block;"><i class="fas fa-chevron-up"></i></button>
+		style="display: block;">&#62;</button>
 </footer>
 
 </div><!-- #page -->
