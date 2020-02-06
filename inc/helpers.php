@@ -28,7 +28,7 @@ if ( ! function_exists( 'ourakea_header_page_title' ) ) :
 			?>
 <div class="page-content align-center">
     <div class="container">
-        <h1 class="header-heading uppercase"><?php single_post_title(); ?></h1>
+        <h1 class="header-heading"><?php single_post_title(); ?></h1>
     </div>
 </div>
 <?php
@@ -36,7 +36,7 @@ if ( ! function_exists( 'ourakea_header_page_title' ) ) :
 			?>
 <div class="page-content">
     <div class="container">
-        <h1 class="header-heading uppercase"><?php the_archive_title(); ?></h1>
+        <h1 class="header-heading"><?php the_archive_title(); ?></h1>
     </div>
 </div>
 
@@ -45,7 +45,7 @@ if ( ! function_exists( 'ourakea_header_page_title' ) ) :
 			?>
 <div class="page-content">
     <div class="container">
-        <h1 class="header-heading uppercase">
+        <h1 class="header-heading">
             <?php printf( esc_html__( 'Search Results for: %s', 'ourakea' ), get_search_query() ); ?>
         </h1>
     </div>
@@ -55,7 +55,7 @@ if ( ! function_exists( 'ourakea_header_page_title' ) ) :
 			?>
 <div class="page-content">
     <div class="container">
-        <h1 class="header-heading uppercase">
+        <h1 class="header-heading">
             <span><?php echo __( 'Oops!', 'ourakea' ); ?></span><?php echo esc_html__( ' That page can&#39;t be found.', 'ourakea' ); ?>
         </h1>
 
