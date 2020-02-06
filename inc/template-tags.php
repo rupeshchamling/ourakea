@@ -95,7 +95,7 @@ if ( ! function_exists( 'ourakea_post_tag' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'ourakea' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'ourakea' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
 				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'ourakea' ) . '</span>', $tags_list ); // WPCS: XSS OK.
