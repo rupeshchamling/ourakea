@@ -10,8 +10,9 @@
  */
 
 ?>
-
+<?php if ( have_posts() ) { ?>
 </div><!-- #content -->
+<?php } ?>
 
 
 <footer id="footer">
