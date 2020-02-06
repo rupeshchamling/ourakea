@@ -277,3 +277,32 @@ if ( ! function_exists( 'ourakea_related_post_query' ) ) :
 		}
 	}
 endif;
+
+
+function ourakea_archive_title() {
+	$title = __( 'Archives' );
+
+	if ( is_category() ) {
+		/* translators: Category archive title. %s: Category name. */
+		$title = sprintf( __( 'Category <span> %s </span>' ), single_cat_title( '', false ) );
+	} elseif ( is_tag() ) {
+		/* translators: Tag archive title. %s: Tag name. */
+		$title = sprintf( __( 'Tag <span> %s </span>' ), single_tag_title( '', false ) );
+	} elseif ( is_author() ) {
+		/* translators: Author archive title. %s: Author name. */
+		$title = sprintf( __( 'Author <span> %s </span>' ), '<span class="vcard">' . get_the_author() . '</span>' );
+	} elseif ( is_year() ) {
+		/* translators: Yearly archive title. %s: Year. */
+		$title = sprintf( __( 'Year <span> %s </span>' ), get_the_date( _x( 'Y', 'yearly archives date format' ) ) );
+	} elseif ( is_month() ) {
+		/* translators: Monthly archive title. %s: Month name and year. */
+		$title = sprintf( __( 'Month <span> %s </span>' ), get_the_date( _x( 'F Y', 'monthly archives date format' ) ) );
+	} elseif ( is_day() ) {
+		/* translators: Daily archive title. %s: Date. */
+		$title = sprintf( __( 'Day <span> %s </span>' ), get_the_date( _x( 'F j, Y', 'daily archives date format' ) ) );
+
+	}
+	return $title;
+}
+
+add_filter( 'get_the_archive_title', 'ourakea_archive_title' );
