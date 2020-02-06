@@ -76,7 +76,7 @@ get_header();
 								<article class="row">
 									<div class="col-sm-5 figure">
 										<a href="<?php the_permalink(); ?>">
-											<?php ourakea_post_thumbnail(); ?>
+											<?php the_post_thumbnail(); ?>
 										</a>
 									</div>
 
