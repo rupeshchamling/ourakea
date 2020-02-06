@@ -71,7 +71,7 @@ if ( ! function_exists( 'ourakea_header_page_title' ) ) :
 			<?php else : ?>
 		<div class="page-content">
 	<div class="container">
-		<h1 class="header-heading"><?php esc_html_e( 'Nothing Found', 'ourakea' ); ?></h1>
+		<h1 class="header-heading"><?php esc_html_e( 'Not Found', 'ourakea' ); ?></h1>
 				<?php
 				if ( is_home() && current_user_can( 'publish_posts' ) ) :
 

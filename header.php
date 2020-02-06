@@ -51,5 +51,6 @@
 			?>
 
 		</header><!-- #masthead -->
-
+<?php if ( have_posts() ) { ?>
 		<div id="content" class="content-wrap">
+<?php } ?>
