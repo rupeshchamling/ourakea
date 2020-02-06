@@ -39,8 +39,12 @@ get_header();
 
 				</ul>
 
-						<?php
+					<?php
+					if ( get_theme_mod( 'blog_pagination_mode' ) === 'numeric' ) {
+						the_posts_pagination();
+					} else {
 						the_posts_navigation();
+					}
 			else :
 				get_template_part( 'template-parts/content', 'none' );
 		endif;
