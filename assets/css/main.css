@@ -478,18 +478,26 @@ h6 {
 /* -- Header Content Styles -- */
 
 .page-content {
-    background-image: url('../images/header-title-banner.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 100px 0;
+    padding: 120px 0;
 }
 
 .header-heading {
-    font-size: 60px;
+    font-size: 42px;
     font-weight: 900;
     color: #ffffff;
     margin: 0;
+    text-align: center;
+}
+
+.header-heading span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+    display: block;
+    margin-top: 15px;
 }
 
 /* -- Section Styles -- */
@@ -510,7 +518,6 @@ section .paragraph {
 }
 
 section p {
-    font-size: 18px;
     color: #181818;
 }
 
@@ -719,26 +726,29 @@ section .col-content {
 .nav-links .page-numbers,
 .page-links,
 .page-links a {
-    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
     font-weight: 600;
-    color: #2e5ea2;
-    margin-right: 20px;
-    transition: unset;
+    color: #929292;
+    margin: 0 10px 10px 0;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    display: inline-block;
+    background-color: #f0f0f0;
+    border-radius: 100%;
 }
 
 .next.page-numbers {
     margin-right: 0 !important;
 }
 
-span.page-numbers:hover {
-    border-bottom: 2px solid #333333;
-}
-
 #comments span.page-numbers.current,
-span.page-numbers.current {
-    padding: 4px 7px;
-    border: none;
-    background-color: #162a64;
+span.page-numbers.current,
+.page-numbers.dots,
+a.page-numbers:hover {
+    background-color: #ec6a2a;
     color: #ffffff;
 }
 
@@ -843,12 +853,22 @@ span.page-numbers.current {
 
 #related-post figure {
     position: relative;
+    overflow: hidden;
+}
+
+#related-post figure img {
+    transition: .3s;
+}
+
+#related-post figure img:hover {
+    transform: scale(1.1);
 }
 
 #related-post .cat-links {
     position: absolute;
     bottom: 0;
     left: 0;
+    font-size: 0;
 }
 
 #related-post .cat-links a{
@@ -966,6 +986,8 @@ span.page-numbers.current {
 
 .comment-awaiting-moderation {
     font-style: normal;
+    color: #ff0000;
+    opacity: .5;
     margin: 10px 0 !important;
     display: block;
 }
@@ -1035,9 +1057,10 @@ span.page-numbers.current {
 }
 
 #cancel-comment-reply-link {
-    display: inline-block;
+    display: block;
     color: #ff0000;
-    margin-left: 10px;
+    margin: 10px 0 0;
+    opacity: .5;
 }
 
 #comments .page-numbers {
