@@ -12,9 +12,10 @@ if ( ! function_exists( 'tihar_post_comments' ) ) :
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
 	function ourakea_post_comments() {
-
-		?><span class="post-comments"><i class="far fa-comments"></i><?php comments_popup_link( '0', '1', '%' ); ?></span>
-		<?php
+		if ( comments_open() ) {
+			?><span class="post-comments"><i class="far fa-comments"></i><?php comments_popup_link( '0', '1', '%', '', '' ); ?></span>
+			<?php
+		}
 	}
 	endif;
 

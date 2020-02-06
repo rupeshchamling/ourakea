@@ -12,15 +12,13 @@ get_header();
 
 <section class="section-search">
 	<div class="container">
-
-		<div id="primary" class="content-area">
+	<div class="row">
+		<div id="primary" class="content-area<?php ourakea_content_class(); ?> column">
 			<main id="main" class="site-main" role="main">
 
 				<?php
 				if ( have_posts() ) :
 					?>
-
-				<ul class="search-results list-group list-group-flush pb-4">
 
 					<?php
 						/* Start the Loop */
@@ -37,15 +35,15 @@ get_header();
 						endwhile;
 					?>
 
-				</ul>
-
 					<?php
 					if ( get_theme_mod( 'blog_pagination_mode' ) === 'numeric' ) {
-						the_posts_pagination( array(
-							'mid_size'  => 2,
-							'prev_text' => __( '<', 'textdomain' ),
-							'next_text' => __( '&#62', 'textdomain' ),
-						) );
+						the_posts_pagination(
+							array(
+								'mid_size'  => 2,
+								'prev_text' => __( '<', 'textdomain' ),
+								'next_text' => __( '&#62', 'textdomain' ),
+							)
+						);
 					} else {
 						the_posts_navigation();
 					}
@@ -56,7 +54,12 @@ get_header();
 
 			</main>
 		</div><!-- #primary -->
+		<?php
+		/* Get Sidebar #secondary */
+		get_sidebar();
+		?>
 
+	</div><!-- /.row -->
 	</div><!-- /.container -->
 </section><!-- /.section-search -->
 
