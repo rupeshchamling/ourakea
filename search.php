@@ -47,8 +47,6 @@ get_header();
 					} else {
 						the_posts_navigation();
 					}
-			else :
-				get_template_part( 'template-parts/content', 'none' );
 		endif;
 			?>
 
