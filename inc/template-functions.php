@@ -161,7 +161,6 @@ add_filter( 'previous_posts_link_attributes', 'ourakea_posts_link_attributes' );
  * @param string $content comment reply link class.
  */
 function ourakea_comment_reply_link( $content ) {
-	$extra_classes = 'btn-uni';
 	return preg_replace( '/comment-reply-link/', 'comment-reply-link ' . $extra_classes, $content );
 }
 add_filter( 'comment_reply_link', 'ourakea_comment_reply_link', 99 );
