@@ -13,8 +13,9 @@ if ( ! function_exists( 'tihar_post_comments' ) ) :
 	 */
 	function ourakea_post_comments() {
 
-		?><span class="post-comments"><i class="far fa-comments"></i><?php comments_popup_link( '0' , '1' , '%' ); ?></span>
-<?php }
+		?><span class="post-comments"><i class="far fa-comments"></i><?php comments_popup_link( '0', '1', '%' ); ?></span>
+		<?php
+	}
 	endif;
 
 if ( ! function_exists( 'ourakea_entry_summary' ) ) :
@@ -48,7 +49,7 @@ if ( ! function_exists( 'ourakea_posted_by' ) ) :
 	 */
 	function ourakea_posted_by() {
 		global $post;
-		$avatar = get_avatar_url( get_the_author_meta( 'ID' ), ['size' => '36'] );
+		$avatar = get_avatar_url( get_the_author_meta( 'ID' ), array( 'size' => '36' ) );
 
 		$byline = sprintf(
 			/* translators: %s: post author. */
@@ -56,7 +57,7 @@ if ( ! function_exists( 'ourakea_posted_by' ) ) :
 			'<a class="author" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> <img src="'.$avatar.'" class="avatar-img">' . $byline; // WPCS: XSS OK.
+		echo '<span class="byline"> <img src="' . $avatar . '" class="avatar-img">' . $byline; // WPCS: XSS OK.
 
 	}
 endif;
@@ -144,72 +145,73 @@ if ( ! function_exists( 'ourakea_comment' ) ) :
 		} else {
 			$tag       = 'li';
 			$add_below = 'div-comment';
-		} ?>
+		}
+		?>
 
 <<?php echo $tag; ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>
-    id="comment-<?php comment_ID(); ?>">
+	id="comment-<?php comment_ID(); ?>">
 
-    <?php
+		<?php
 			// Switch between different comment types.
 		switch ( $comment->comment_type ) :
 			case 'pingback':
 			case 'trackback':
 				?>
-    <div class="pingback-entry"><span class="pingback-heading"><?php esc_html_e( 'Pingback:', 'ourakea' ); ?></span>
-        <?php comment_author_link(); ?></div>
-    <?php
+	<div class="pingback-entry"><span class="pingback-heading"><?php esc_html_e( 'Pingback:', 'ourakea' ); ?></span>
+				<?php comment_author_link(); ?></div>
+				<?php
 				break;
 			default:
 				if ( 'div' != $args['style'] ) {
 					?>
-    <div id="div-comment-<?php comment_ID(); ?>" class="comment-meta">
-        <?php } ?>
-        <div class="comment-author vcard">
-            <figure>
-                <?php
+	<div id="div-comment-<?php comment_ID(); ?>" class="comment-meta">
+		<?php } ?>
+		<div class="comment-author vcard">
+			<figure>
+				<?php
 						// Display avatar unless size is set to 0.
 				if ( $args['avatar_size'] != 0 ) {
 					$avatar_size = ! empty( $args['avatar_size'] ) ? $args['avatar_size'] : 70; // set default avatar size
 					echo get_avatar( $comment, $avatar_size );
 				}
 				?>
-            </figure>
+			</figure>
 
-            <div class="comment-metadata">
-                <?php
+			<div class="comment-metadata">
+				<?php
 						// Display author name.
 						printf( __( '<span class="fn">%s</span> ', 'ourakea' ), get_comment_author_link() );
 				?>
-                <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>" class="date">
-                    <?php
+				<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>" class="date">
+					<?php
 							/* translators: 1: date, 2: time */
 							printf(
 								__( '%1$s at %2$s', 'ourakea' ),
 								get_comment_date(),
 								get_comment_time()
 							);
-						?>
-                </a>
-
-                <div class="comment-details">
-                    <div class="comment-text"><?php comment_text(); ?></div><!-- .comment-text -->
-                    <?php
-							// Display comment moderation text.
-						if ( $comment->comment_approved === '0' ) {
-							?>
-                    <em
-                        class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'ourakea' ); ?></em><br />
-                    <?php
-						}
-						?>
-
-                </div><!-- .comment-details -->
-                <?php
-						edit_comment_link( __( '(Edit)', 'ourakea' ), '  ', '' );
 					?>
-            </div><!-- .comment-meta -->
-            <div class="reply">
-                <?php
+				</a>
+
+				<div class="comment-details">
+					<div class="comment-text"><?php comment_text(); ?></div><!-- .comment-text -->
+					<?php
+							// Display comment moderation text.
+					if ( $comment->comment_approved === '0' ) {
+						?>
+					<em
+						class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'ourakea' ); ?></em><br />
+						<?php
+					}
+					?>
+
+				</div><!-- .comment-details -->
+				<?php
+						edit_comment_link( __( '(Edit)', 'ourakea' ), '  ', '' );
+				?>
+			</div><!-- .comment-meta -->
+			<div class="reply">
+				<?php
 						// Display comment reply link.
 						comment_reply_link(
 							array_merge(
@@ -221,14 +223,14 @@ if ( ! function_exists( 'ourakea_comment' ) ) :
 								)
 							)
 						);
-					?>
-            </div>
-        </div><!-- .comment-author -->
-        <?php
+				?>
+			</div>
+		</div><!-- .comment-author -->
+				<?php
 				if ( 'div' !== $args['style'] ) {
 					?>
-    </div>
-    <?php
+	</div>
+					<?php
 				}
 				// IMPORTANT: Note that we do NOT close the opening tag, WordPress does this for us.
 				break;

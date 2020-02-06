@@ -52,13 +52,13 @@ if ( post_password_required() ) {
 			<?php
 			wp_list_comments(
 				array(
-					'callback'       => 'ourakea_comment',
+					'callback'    => 'ourakea_comment',
 					'avatar_size' => 75,
 				)
 			);
 			?>
 		</ol><!-- .comment-list -->
-
+		<?php if ( paginate_comments_links() ) { ?>
 		<div class="comment_pagination">
 			<?php
 			paginate_comments_links(
@@ -70,6 +70,7 @@ if ( post_password_required() ) {
 			);
 			?>
 		</div>
+		<?php } ?>
 
 		<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
