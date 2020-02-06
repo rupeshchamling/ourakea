@@ -474,7 +474,7 @@ Kirki::add_field(
 		'section'  => 'frontpage_section_one',
 	)
 );
- 
+
 
 // Setting button link
 Kirki::add_field(
