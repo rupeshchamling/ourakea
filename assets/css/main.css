@@ -339,14 +339,6 @@ h6 {
     margin: 0;
 }
 
-.main-navigation .navbar-logo {
-    display: none;
-}
-
-.main-navigation.fixed .navbar-logo {
-    display: block;
-}
-
 .main-navigation.fixed .navbar-brand {
     font-size: 22px;
 }
@@ -744,123 +736,101 @@ span.page-numbers.current {
 
 /* -- Comment Form Styles -- */
 
-#comments {
-    margin-top: 42px;
-}
-
-.comment-wrap {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 26px;
-    margin-bottom: 32px;
+#comments,
+#respond {
+    background: #ffffff;
+    margin: 100px 0 0;
 }
 
 .comments-title,
 #reply-title {
-    font-size: 18px;
-    line-height: 1.5;
-}
-
-#comments .comment-notes {
-    font-size: 16px;
-    letter-spacing: .5px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #383838;
 }
 
 #main .comment article {
     margin: 0;
 }
 
-#comments ol {
+#comments .comment-list {
+    margin-top: 32px;
     padding: 0;
     list-style-type: none;
 }
 
-#comments .comment-list ol {
+#comments .comment-list .children {
     padding-left: 26px;
 }
 
 #comments li {
     padding: 20px 0;
     margin-top: 20px;
-    border-top: 1px solid #eeeeee;
 }
 
 #comments li:last-child {
     padding-bottom: 0;
 }
 
-.comment-author.vcard {
-    margin-bottom: 20px;
+.comment-author {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.comment-meta img {
-    margin-right: 5px;
+.comment-meta figure {
+    padding-right: 38px;
 }
 
-.comment-meta .fn,
-.comment-meta .fn a,
-.bypostauthor {
+.comment-meta figure img {
+    border-radius: 100%;
+}
+
+.comment-metadata {
+    width: 82%;
+}
+
+.comment-metadata .fn,
+.comment-metadata .fn a {
     font-size: 16px;
-    font-weight: 600;
-    color: #1d3962;
+    font-weight: 700;
+    color: #222222;
     text-transform: capitalize;
+    display: block;
 }
 
-.comment-meta .says {
-    display: none;
+.comment-metadata .date {
+    font-size: 13px;
+    font-weight: 300;
+    color: #b1b1b1;
 }
 
-.comment-meta .comment-metadata,
-.comment-meta .comment-metadata a {
-    font-size: 12px;
-    color: rgba(247, 99, 27, 0.7);
-    display: inline-block;
-}
-
-.comment-content {
-    margin-bottom: 15px;
-}
-
-.comment-content p {
-    color: #1d3962;
-    line-height: 1.7;
-    margin-bottom: 5px;
-}
-
-.comment-reply-link,
-#cancel-comment-reply-link {
-    font-size: 10px;
-    font-weight: 600;
-    color: #ffffff;
-    padding: 5px 12px;
-    text-transform: uppercase;
-    opacity: .8;
-    letter-spacing: .5px;
-    display: inline-block;
-}
-
-.comment-reply-link:hover {
-    opacity: 1;
-    color: #ffffff;
+.comment-metadata .comment-details {
+    margin: 5px 0 20px;
 }
 
 .comment-awaiting-moderation {
-    font-size: 12px;
     font-style: normal;
-    margin: 10px 0;
+    margin: 10px 0 !important;
     display: block;
-    background: #4460af;
-    color: #ffffff;
-    padding: 10px 15px;
 }
 
-.comment_pagination {
-    background-color: rgba(22, 42, 100, .06);
-    padding: 5px 15px;
-}
-
-#respond {
-    max-width: 790px;
+#comments .reply {
     width: 100%;
+    text-align: right;
+}
+
+#comments .reply a,
+#cancel-comment-reply-link {
+    font-size: 15px;
+    font-weight: 700;
+    color: #bcbcbc;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: block;
+}
+
+.comment-notes {
+    margin-bottom: 32px;
 }
 
 #commentform .required {
@@ -871,19 +841,24 @@ span.page-numbers.current {
     margin-bottom: 26px;
 }
 
-.comment-respond p.comment-form-author,
-.comment-respond p.comment-form-email {
+.comment-form-author,
+.comment-form-email {
     width: calc(50% - 10px);
     display: inline-block;
     margin: 0 0 26px;
 }
 
-.comment-respond p.comment-form-email {
+.no-sidebar .comment-form-author,
+.no-sidebar .comment-form-email {
+    width: calc(50% - 14px);
+}
+
+.comment-form-email {
     margin-left: 2%;
 }
 
 .comment-form-url {
-    width: 49%;
+    width: 48%;
     margin-bottom: 26px;
 }
 
@@ -898,18 +873,24 @@ span.page-numbers.current {
 }
 
 #commentform .comment-form-cookies-consent label {
+    font-weight: 300;
+    color: #777777;
     margin: auto 0 auto 5px;
-    text-transform: none;
-}
-
-#respond #reply-title small {
-    display: block;
-    margin: 10px 0;
 }
 
 #cancel-comment-reply-link {
-    background: #dd1e26;
-    padding: 8px 12px;
+    display: inline-block;
+    color: #ff0000;
+    margin-left: 10px;
+}
+
+#comments .page-numbers {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+#comments .page-numbers.current {
+    padding: 4px 7px;
 }
 
 /* -- Sidebar Styles -- */
@@ -1241,6 +1222,7 @@ section.widget p {
     font-family: 'PT Serif', serif;
     font-size: 18px;
     color: #545454;
+    margin-bottom: 25px;
 }
 
 .single .entry-meta {
