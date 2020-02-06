@@ -51,7 +51,13 @@ if ( is_home() ) {
 						endwhile;
 
 					if ( get_theme_mod( 'blog_pagination_mode' ) === 'numeric' ) {
-						the_posts_pagination();
+						the_posts_pagination(
+							array(
+								'mid_size'  => 2,
+								'prev_text' => __( '<', 'textdomain' ),
+								'next_text' => __( '&#62', 'textdomain' ),
+							)
+						);
 					} else {
 						the_posts_navigation();
 					}
