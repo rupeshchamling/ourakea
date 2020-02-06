@@ -20,6 +20,10 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/template-functions.php';
 
+if ( ! class_exists( 'Kirki' ) ) {
+	require get_template_directory() . '/kirki/kirki.php';
+}
+
 /**
  * Customizer additions.
  */
@@ -37,6 +41,4 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-if ( ! class_exists( 'Kirki' ) ) {
-	require get_template_directory() . '/kirki/kirki.php';
-}
+

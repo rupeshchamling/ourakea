@@ -64,7 +64,7 @@ function ourakea_customize_register( $wp_customize ) {
 	);
 	$theme_colors[] = array(
 		'slug'      => 'main_color',
-		'default'   => '#ffffff',
+		'default'   => '#212529',
 		'label'     => esc_html__( 'Main Text Color', 'ourakea' ),
 		'transport' => 'postMessage',
 	);
@@ -412,183 +412,212 @@ function ourakea_customize_register( $wp_customize ) {
 		)
 	);
 
-	/**
-	 *
-	 * Add Section General to Panel
-	 */
-	$wp_customize->add_section(
-		'frontpage_general',
-		array(
-			'title'    => __( 'General', 'ourakea' ),
-			'panel'    => 'frontpage_options',
-			'priority' => 10,
-		)
-	);
-
-	$wp_customize->add_setting(
-		'hide_page_title',
-		array(
-			'default'           => false,
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'ourakea_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'hide_page_title',
-		array(
-			'type'    => 'checkbox',
-			'label'   => esc_html__( 'Hide Page Title', 'ourakea' ),
-			'section' => 'frontpage_general',
-		)
-	);
-
-	/**
-	 *
-	 * Add Section Head Banner to Panel
-	 */
-	$wp_customize->add_section(
-		'frontpage_banner',
-		array(
-			'title'    => __( 'Head Banner', 'ourakea' ),
-			'panel'    => 'frontpage_options',
-			'priority' => 20,
-		)
-	);
-
-	// Setting.
-	$wp_customize->add_setting(
-		'banner_title',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
-			'banner_title',
-			array(
-				'label'    => __( 'Heading', 'ourakea' ),
-				'section'  => 'frontpage_banner',
-				'settings' => 'banner_title',
-				'type'     => 'text',
-			)
-		)
-	);
-
-	// Setting.
-	$wp_customize->add_setting(
-		'banner_subtitle',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
-			'banner_subtitle',
-			array(
-				'label'    => __( 'Sub-Heading', 'ourakea' ),
-				'section'  => 'frontpage_banner',
-				'settings' => 'banner_subtitle',
-				'type'     => 'text',
-			)
-		)
-	);
-
-	// Setting.
-	$wp_customize->add_setting(
-		'banner_button_label',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
-			'banner_button_label',
-			array(
-				'label'    => __( 'Button Label', 'ourakea' ),
-				'section'  => 'frontpage_banner',
-				'settings' => 'banner_button_label',
-				'type'     => 'text',
-			)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'banner_button_link',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'esc_url',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
-			'banner_button_link',
-			array(
-				'label'    => __( 'Button Link', 'ourakea' ),
-				'section'  => 'frontpage_banner',
-				'settings' => 'banner_button_link',
-				'type'     => 'text',
-			)
-		)
-	);
-
-	// Setting.
-	$wp_customize->add_setting(
-		'banner_bg_color',
-		array(
-			'default'           => '#FFF',
-			'sanitize_callback' => 'sanitize_hex_color',
-			'transport'         => 'refresh',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'banner_bg_color',
-			array(
-				'label'   => esc_html__( 'Background Color', 'ourakea' ),
-				'section' => 'frontpage_banner',
-			)
-		)
-	);
-
-	// Setting.
-	$wp_customize->add_setting(
-		'banner_bg_image',
-		array(
-			'type'              => 'theme_mod',
-			'sanitize_callback' => 'absint',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Cropped_Image_Control(
-			$wp_customize,
-			'banner_bg_image',
-			array(
-				'section' => 'frontpage_banner',
-				'label'   => __( 'Background Image', 'ourakea' ),
-				'width'   => 1900,
-				'height'  => 1080,
-			)
-		)
-	);
-
 	// END Options.
 }
 add_action( 'customize_register', 'ourakea_customize_register' );
+
+/**
+ *
+ * Add Panel Front Page Settings
+ */
+Kirki::add_panel(
+	'frontpage_options',
+	array(
+		'priority'        => 190,
+		'title'           => __( 'Front Page Settings', 'ourakea' ),
+		'active_callback' => 'ourakea_set_front_page',
+
+	)
+);
+
+/**
+ *
+ * Add Section One to Panel
+ */
+Kirki::add_section(
+	'frontpage_section_one',
+	array(
+		'title' => __( 'Section One', 'ourakea' ),
+		'panel' => 'frontpage_options',
+	)
+);
+
+// Setting section heading.
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'text',
+		'settings' => 'section_one_title',
+		'label'    => esc_html__( 'Section Heading', 'ourakea' ),
+		'section'  => 'frontpage_section_one',
+	)
+);
+
+// Setting section description.
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'textarea',
+		'settings' => 'section_one_desc',
+		'label'    => esc_html__( 'Section Description', 'ourakea' ),
+		'section'  => 'frontpage_section_one',
+	)
+);
+
+// Setting button label
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'text',
+		'settings' => 'section_one_btn_label',
+		'label'    => esc_html__( 'Button Label', 'ourakea' ),
+		'section'  => 'frontpage_section_one',
+	)
+);
+ 
+
+// Setting button link
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'link',
+		'settings' => 'section_one_btn_link',
+		'label'    => __( 'Button Link', 'ourakea' ),
+		'section'  => 'frontpage_section_one',
+	)
+);
+
+// Setting featured image
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'image',
+		'settings' => 'section_one_img',
+		'label'    => esc_html__( 'Section Featured Image', 'ourakea' ),
+		'section'  => 'frontpage_section_one',
+	)
+);
+
+/**
+ *
+ * Add Section Two to Panel
+ */
+Kirki::add_section(
+	'frontpage_section_two',
+	array(
+		'title' => __( 'Section Two', 'ourakea' ),
+		'panel' => 'frontpage_options',
+	)
+);
+
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'        => 'select',
+		'settings'    => 'section_two_posts',
+		'label'       => esc_html__( 'Select Posts For This Secion', 'ourakea' ),
+		'description' => __( 'You can select multiple posts (upto 8 )', 'ourakea' ),
+		'section'     => 'frontpage_section_two',
+		'multiple'    => 8,
+		'choices'     => Kirki_Helper::get_posts( array( 'post_type' => 'post' ) ),
+	)
+);
+
+
+/**
+ *
+ * Add Section Three to Panel
+ */
+Kirki::add_section(
+	'frontpage_section_three',
+	array(
+		'title' => __( 'Section Three', 'ourakea' ),
+		'panel' => 'frontpage_options',
+	)
+);
+
+// Setting section heading.
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'text',
+		'settings' => 'section_three_title',
+		'label'    => esc_html__( 'Section Heading', 'ourakea' ),
+		'section'  => 'frontpage_section_three',
+	)
+);
+
+// Setting section description.
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'textarea',
+		'settings' => 'section_three_desc',
+		'label'    => esc_html__( 'Section Description', 'ourakea' ),
+		'section'  => 'frontpage_section_three',
+	)
+);
+
+// Setting button label
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'text',
+		'settings' => 'section_three_btn_label',
+		'label'    => esc_html__( 'Button Label', 'ourakea' ),
+		'section'  => 'frontpage_section_three',
+	)
+);
+
+
+// Setting button link
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'link',
+		'settings' => 'section_three_btn_link',
+		'label'    => __( 'Button Link', 'ourakea' ),
+		'section'  => 'frontpage_section_three',
+	)
+);
+
+// Setting featured image
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'     => 'image',
+		'settings' => 'section_three_img',
+		'label'    => esc_html__( 'Section Featured Image', 'ourakea' ),
+		'section'  => 'frontpage_section_three',
+	)
+);
+
+/**
+ *
+ * Add Section Four to Panel
+ */
+Kirki::add_section(
+	'frontpage_section_four',
+	array(
+		'title' => __( 'Section Four', 'ourakea' ),
+		'panel' => 'frontpage_options',
+	)
+);
+
+Kirki::add_field(
+	'ourakea_kirki_config',
+	array(
+		'type'        => 'select',
+		'settings'    => 'section_four_posts',
+		'label'       => esc_html__( 'Select Posts For This Secion', 'ourakea' ),
+		'description' => __( 'You can select multiple posts (upto 8 )', 'ourakea' ),
+		'section'     => 'frontpage_section_four',
+		'multiple'    => 8,
+		'choices'     => Kirki_Helper::get_posts( array( 'post_type' => 'post' ) ),
+	)
+);
+
+
 
 /**
  * Render the site title for the selective refresh partial.
