@@ -97,21 +97,21 @@ get_header();
 	<div class="container">
 		<div class="row">
 		<?php
-		if ( get_theme_mod( 'section_two_posts' ) ) {
-			foreach ( get_theme_mod( 'section_two_posts' ) as $section_two_post ) :
-				if ( count( get_theme_mod( 'section_two_posts' ) ) === 3 || count( get_theme_mod( 'section_two_posts' ) ) === 6 ) {
-					$section_two_class = 'col-lg-4 col-md-3';
+		if ( get_theme_mod( 'section_four_posts' ) ) {
+			foreach ( get_theme_mod( 'section_four_posts' ) as $section_four_post ) :
+				if ( count( get_theme_mod( 'section_four_posts' ) ) === 3 || count( get_theme_mod( 'section_four_posts' ) ) === 6 ) {
+					$section_four_class = 'col-lg-4 col-md-3';
 				} else {
-					$section_two_class = 'col-lg-3 col-md-6';
+					$section_four_class = 'col-lg-3 col-md-6';
 				}
 
 				?>
-			<div class="<?php echo esc_html( $section_two_class ); ?> col-sm-6 column">
+			<div class="<?php echo esc_html( $section_four_class ); ?> col-sm-6 column">
 				<div class="col-content">
-					<a href="<?php echo esc_url( get_the_permalink( $section_two_post ) ); ?>"><?php echo get_the_post_thumbnail( $section_two_post ); ?></a>
+					<a href="<?php echo esc_url( get_the_permalink( $section_four_post ) ); ?>"><?php echo get_the_post_thumbnail( $section_four_post ); ?></a>
 
 					<div class="blog-heading">
-						<a href="<?php echo esc_url( get_the_permalink( $section_two_post ) ); ?>"><?php echo esc_html( get_the_title( $section_two_post ) ); ?></a>
+						<a href="<?php echo esc_url( get_the_permalink( $section_four_post ) ); ?>"><?php echo esc_html( get_the_title( $section_four_post ) ); ?></a>
 					</div>
 				</div>
 			</div>
