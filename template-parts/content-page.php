@@ -22,10 +22,6 @@
 
 <div class="card-body">
 
-	<header class="entry-header pb-4">
-		<?php the_title( '<h1 class="uppercase clr-blu bold-9">', '</h1>' ); ?>
-	</header>
-
 	<div class="entry-content">
 		<?php
 		the_content();

@@ -45,7 +45,7 @@ get_header();
 		if ( get_theme_mod( 'section_two_posts' ) ) {
 			foreach ( get_theme_mod( 'section_two_posts' ) as $section_two_post ) :
 				if ( count( get_theme_mod( 'section_two_posts' ) ) === 3 || count( get_theme_mod( 'section_two_posts' ) ) === 6 ) {
-					$section_two_class = 'col-lg-4 col-md-3';
+					$section_two_class = 'col-lg-4 col-md-6';
 				} else {
 					$section_two_class = 'col-lg-3 col-md-6';
 				}
@@ -100,7 +100,7 @@ get_header();
 		if ( get_theme_mod( 'section_four_posts' ) ) {
 			foreach ( get_theme_mod( 'section_four_posts' ) as $section_four_post ) :
 				if ( count( get_theme_mod( 'section_four_posts' ) ) === 3 || count( get_theme_mod( 'section_four_posts' ) ) === 6 ) {
-					$section_four_class = 'col-lg-4 col-md-3';
+					$section_four_class = 'col-lg-4 col-md-6';
 				} else {
 					$section_four_class = 'col-lg-3 col-md-6';
 				}

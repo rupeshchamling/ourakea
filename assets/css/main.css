@@ -353,10 +353,12 @@ h6 {
 
 .nav-search .navbar-nav {
     margin: auto;
+    display: block;
 }
 
 .main-navigation .menu-item {
     margin: 0 20px;
+    display: inline-block;
 }
 
 .main-navigation .menu-item:last-child {
@@ -436,9 +438,10 @@ h6 {
 
 .search_form .input-group {
     position: relative;
-    width: 680px;
+    width: 710px;
     max-width: 100%;
     padding-bottom: 15px;
+    margin: 0 15px;
     border-bottom: 1px solid #ffffff;
 }
 
@@ -1287,6 +1290,18 @@ section.widget p {
     line-height: 1.5;
 }
 
+/* -- Page Styles -- */
+
+.entry-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.entry-content li {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
 /* -- Social Icons Styles -- */
 
 .menu-social-menu-container .menu {
@@ -1541,7 +1556,7 @@ body.search-no-results .page-content .header-heading {
 
 body.search-no-results .header-wrap .page-content,
 .error404 .page-content {
-    min-height: 70vh;
+    min-height: 72vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center;

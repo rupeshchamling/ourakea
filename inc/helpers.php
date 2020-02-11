@@ -42,6 +42,15 @@ if ( ! function_exists( 'ourakea_header_page_title' ) ) :
 	</div>
 </div>
 
+<?php
+				elseif ( is_page() ) :
+					?>
+<div class="page-content">
+	<div class="container">
+		<h1 class="header-heading"><?php the_title(); ?></h1>
+	</div>
+</div>
+
 					<?php
 				elseif ( is_search() ) :
 					?>

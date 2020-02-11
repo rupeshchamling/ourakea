@@ -138,6 +138,7 @@
         height: 19px;
         position: relative;
         outline: none;
+        order: 1;
     }
     #menu:hover {
         opacity: 0.7;
